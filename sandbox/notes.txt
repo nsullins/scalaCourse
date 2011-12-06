@@ -1,0 +1,29 @@
+Day 1
+
+
+1) It's best to add return types to method.
+2) Constructor parameters are private[this] by default if they aren't parametric fields i.e. the val/var doesn't proceed them in the class constructor definition i.e class c(n: Int, d: Int) vs class(val d: Int, val n: Int)
+3) In 2.8 you can add default params in the constructor definition i.e. class c(n: Int = 2, d: Int)
+4) can use the tailrec annotation and the compiler will error out if it can't use tail recursion for the annotated method
+5) semicolon inference is turned off in parenthesis that's why for loops within parenthesis need semicolons. If you use { then it won't be required.
+6) Argument expansion via _*
+
+
+
+Day 2
+
+1) Arrays equals method is unlike other scala collections in that it tests for referential equality instead of the contents being the same
+2) In abstract classes use def unless you know for sure it will only ever be a val because if you make it val first it can't become a def later whereas the inverse if not true
+3) canEqual should always be defined on the subclasses
+4) If you have any issues add the Xmx1024m -Xss512m in environment variables for the system
+5) Never include java or scale in your package names
+6) Case classes shouldn't extends Case classes because the equals method becomes very difficult to get right
+
+
+Day 3
+
+1) Inherited in the Scaladoc shows the linearization of the trait inheritance
+2) Eclipse - is used by Martin in his work with the scale compiler so he is throwing a lot of resources at it.
+3) Using a logging actor is very easy and cool
+4) In collections Strict means that all elements are evaluated before collection is returned and non/un strict means that the element is evaluated when called
+5) calling view will return a lazy collection and then calling will force will evaluate them 
